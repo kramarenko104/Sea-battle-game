@@ -146,25 +146,25 @@ public class GameBoard extends JFrame {
 		for (int i = 0; i < fieldSize + 1; i++) {
 			switch (i) {
 			case 1:
-				text = "À"; break;
+				text = "Ð"; break;
 			case 2:
-				text = "Á"; break;
+				text = "Ð‘"; break;
 			case 3:
-				text = "Â"; break;
+				text = "Ð’"; break;
 			case 4:
-				text = "Ã"; break;
+				text = "Ð“"; break;
 			case 5:
-				text = "Ä"; break;
+				text = "Ð”"; break;
 			case 6:
-				text = "Å"; break;
+				text = "Ð•"; break;
 			case 7:
-				text = "Æ"; break;
+				text = "Ð–"; break;
 			case 8:
-				text = "Ç"; break;
+				text = "Ð—"; break;
 			case 9:
-				text = "È"; break;
+				text = "Ð˜"; break;
 			case 10:
-				text = "Ê"; break;
+				text = "Ðš"; break;
 			}
 			JButton but = new JButton(text);
 			but.setEnabled(false);
