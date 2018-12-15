@@ -27,6 +27,7 @@ public class GameBoard extends JFrame {
 	private JButton buttonRestart = new JButton("RESTART");
 	private JPanel mainPanel = new JPanel();
 	private String sInfoYourTurn = "Your turn...Press any square on computer's board to guess its boats location...";
+	private String sInfoCompTurn = "Computer is playing ...";
 
 	private JButton[][] compBoard;
 	private JButton[][] personBoard;
@@ -135,7 +136,7 @@ public class GameBoard extends JFrame {
 		title.setFont(labelFont);
 		oneGamerPanel.add(title, BorderLayout.NORTH);
 
-		String text = "";
+		char text = 0;
 		JPanel subPanel = new JPanel();
 		subPanel.setLayout(new BorderLayout());
 
@@ -146,27 +147,29 @@ public class GameBoard extends JFrame {
 		for (int i = 0; i < fieldSize + 1; i++) {
 			switch (i) {
 			case 1:
-				text = "А"; break;
+				text = '\u0410'; break;
 			case 2:
-				text = "Б"; break;
+				text = '\u0411'; break;
 			case 3:
-				text = "В"; break;
+				text = '\u0412'; break;
 			case 4:
-				text = "Г"; break;
+				text = '\u0413'; break;
 			case 5:
-				text = "Д"; break;
+				text = '\u0414'; break;
 			case 6:
-				text = "Е"; break;
+				text = '\u0415'; break;
 			case 7:
-				text = "Ж"; break;
+				text = '\u0416'; break;
 			case 8:
-				text = "З"; break;
+				text = '\u0417'; break;
 			case 9:
-				text = "И"; break;
+				text = '\u0418'; break;
 			case 10:
-				text = "К"; break;
+				text = '\u041a'; break;
+			default:
+				text = '\u0020'; break;
 			}
-			JButton but = new JButton(text);
+			JButton but = new JButton(Character.toString(text));
 			but.setEnabled(false);
 			but.setFont(boldTextFont);
 			alphabetPanel.add(but);
@@ -207,9 +210,11 @@ public class GameBoard extends JFrame {
 						checkWinner();
 						
 						// Computer tries to guess where person's boats are located
+						info.setText(sInfoCompTurn);
 						person.processShot();
 						updateBoardCellsValues();
 						checkWinner();
+						info.setText(sInfoYourTurn);
 					}
 				});
 				if (playerName.equals("Computer")) {

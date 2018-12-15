@@ -33,7 +33,7 @@ public class Player {
 	}
 
 	public String getText(int i, int j) {
-		return (cells[i][j].isInjured() ? "x" : (cells[i][j].isKilled() ? "æ" : (cells[i][j].isPassed() ? "." : "")));
+		return (cells[i][j].isInjured() ? "x" : (cells[i][j].isKilled() ? Character.toString('\u0436') : (cells[i][j].isPassed() ? "." : "")));
 	}
 
 	public boolean isShown(int i, int j) {
